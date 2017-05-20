@@ -1,0 +1,15 @@
+PLATFORMBundle\Entity\Location:
+    type: entity
+    table: null
+    repositoryClass: PLATFORMBundle\Repository\LocationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        location:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

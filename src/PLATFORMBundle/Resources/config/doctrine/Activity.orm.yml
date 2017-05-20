@@ -1,0 +1,15 @@
+PLATFORMBundle\Entity\Activity:
+    type: entity
+    table: null
+    repositoryClass: PLATFORMBundle\Repository\ActivityRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        activity:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

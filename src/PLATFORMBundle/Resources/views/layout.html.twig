@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block sidebar %}
+    
+    <ul id="slide-out" class="side-nav">
+        <li><div class="userView center">
+<div class="card-image">
+               <img src="{{ asset('bundles/platform/img/photp.png') }}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+</div>
+                <span class="black-text name">John Doe</span>
+                <span class="black-text email">jdandturk@gmail.com</span>
+            </div></li>
+        <li><a href="{{ path('search_profil') }}">Search</a></li>
+        <li><a href="{{ path('profil') }}">profil</a></li>
+        <li><a href="{{ path('creation_profil') }}">edit your profil</a></li>
+        <li><a href="#!">My historic</a></li>
+        <li><a class="waves-effect" href="#!">Déconnexion</a></li>
+
+    </ul>
+    <div class="sidebar">
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+{% endblock %}

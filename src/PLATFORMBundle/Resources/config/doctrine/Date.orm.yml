@@ -1,0 +1,16 @@
+PLATFORMBundle\Entity\Date:
+    type: entity
+    table: null
+    repositoryClass: PLATFORMBundle\Repository\DateRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        date:
+            type: datetime
+        date2:
+            type: datetime
+    lifecycleCallbacks: {  }

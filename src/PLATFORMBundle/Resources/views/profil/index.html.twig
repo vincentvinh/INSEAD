@@ -1,0 +1,49 @@
+{% extends '@PLATFORM/layout.html.twig' %}
+
+{% block body %}
+
+
+    <div class="container">
+        <div class="row">
+            <h1>SEARCH</h1>
+            <div id="search">
+                <form action="{{ path('search_profil') }}" >
+                    <div class="input-field col s6">
+                        <input id="location" type="text" class="validate">
+                        <label for="location">Location</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="date" type="date" class="datepicker validate">
+                        <label for="date"></label>
+                    </div>
+                    <div class="input-field col s1">
+                        <input id="time-demo" placeholder="00:00" type="text">
+                        <label class="active" for="time_demo"></label>
+                    </div>
+                    <div class="input-field col s1">
+                        <input id="time-demo" placeholder="00:00" type="text">
+                        <label class="active" for="time_demo"></label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <label for="autocomplete-input">Activity</label>
+                    </div>
+
+                    <div class="input-field col s12 center">
+                        <input type="submit" value="search" class="btn btn-primary "/>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="row">
+            <h1>RESULT</h1>
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+
+
+{%  endblock %}
