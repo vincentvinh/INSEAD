@@ -2,34 +2,34 @@
 
 {% block body %}
 
-    <div class="container">
+
+    <div class="container light-blue lighten-5">
 
         <ul class="collapsible" data-collapsible="accordion">
             <li>
-                <div class="collapsible-header"><i class="material-icons"></i>Search filters</div>
+                <div class="collapsible-header"><i class="material-icons">mode_edit </i>Search filters</div>
                 <div class="collapsible-body">
-                    <h1>SEARCH</h1>
                     <div id="search">
                         <form action="{{ path('search_profil') }}" >
                             <div class="input-field col s6">
                                 <input id="location" type="text" class="validate">
                                 <label for="location">Location</label>
                             </div>
-                            <div class="input-field col s4">
-                                <input id="date" type="date" class="datepicker validate">
+                            <div class="input-field col s6">
+                                <input placeholder="2017:03:06" id="date" type="date" class="datepicker ">
                                 <label for="date"></label>
                             </div>
-                            <div class="input-field col s1">
-                                <input id="time-demo" placeholder="00:00" type="text">
-                                <label class="active" for="time_demo"></label>
+                            <div class="input-field col s6" id="time-demo3">
+                                <input placeholder="00:00" type="text">
+                                <label class="active" for="time_demo3"></label>
                             </div>
-                            <div class="input-field col s1">
-                                <input id="time-demo" placeholder="00:00" type="text">
-                                <label class="active" for="time_demo"></label>
+                            <div class="input-field col s6" id="time-demo4">
+                                <input placeholder="00:00" type="text">
+                                <label class="active" for="time_demo4"></label>
                             </div>
 
-                            <div class="input-field col s12">
-                                <input type="text" id="autocomplete-input" class="autocomplete">
+                            <div class="input-field col s12 autocomplete">
+                                <input type="text" id="autocomplete-input2">
                                 <label for="autocomplete-input">Activity</label>
                             </div>
 
@@ -43,87 +43,66 @@
         </ul>
 
         <div class="row">
-            <h1>RESULT</h1>
-        </div>
-        <div class="row">
+            <div class="center">
+                <h1>Get a match</h1>
+            </div>
+
 
             <div id="result-desc">
                 <div class="col s3 center">
-
-
-                        <div class="col s12">
-                            <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/photp.png') }}" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
-                        </div>
-
-
-                </div>
-
-            <div class="col s3 center">
-
-
                     <div class="col s12">
-                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/photp.png') }}" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
+                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="z-depth-4 circle responsive-img"></a> <!-- notice the "circle" class -->
                     </div>
-
-
-            </div>
-
-            <div class="col s3">
-
-
+                </div>
+                <div class="col s3 center">
+                    <div class="col s12">
+                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="z-depth-4 circle responsive-img"></a> <!-- notice the "circle" class -->
+                    </div>
+                </div>
+                <div class="col s3">
                     <div class="col s12 center">
-                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/photp.png') }}" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
+                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="z-depth-4 circle responsive-img"></a> <!-- notice the "circle" class -->
                     </div>
-
-
-
-            </div>
-            <div class="col s3">
-
-
+                </div>
+                <div class="col s3">
                     <div class="col s12 center">
-                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/photp.png') }}" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
+                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="z-depth-4 circle responsive-img"></a> <!-- notice the "circle" class -->
                     </div>
-
-
+                </div>
             </div>
-        </div>
         </div>
         <div class="row">
-
             <div id="result-img">
-                <div class="col s3">
-                    <div class="card-panel grey lighten-5 z-depth-1">
-                        <p>Name :</p>
-                        <p>Company :</p>
-                        <p>Insead :</p>
-                        <p>Position :</p>
+                <div class="col s3 card center">
+                    <p >John Doe</p>
+                    <p>Westinghouse</p>
+                    <p>Fontainebleau</p>
+                    <p>CEO</p>
 
-                    </div>
                 </div>
-                <div class="col s3">
-                    <div class="card-panel grey lighten-5 z-depth-1">
-                        <p>Name :</p>
-                        <p>Company :</p>
-                        <p>Insead :</p>
-                        <p>Position :</p>
-                    </div>
+                <div class="col s3 card center">
+
+                    <p >John Doe</p>
+                    <p>Westinghouse</p>
+                    <p>Fontainebleau</p>
+                    <p>CEO</p>
+
                 </div>
-                <div class="col s3">
-                    <div class="card-panel grey lighten-5 z-depth-1">
-                        <p>Name :</p>
-                        <p>Company :</p>
-                        <p>Insead :</p>
-                        <p>Position :</p>
-                    </div>
+                <div class="col s3 card center">
+
+                        <p >John Doe</p>
+                        <p>Westinghouse</p>
+                        <p>Fontainebleau</p>
+                        <p>CEO</p>
+
                 </div>
-                <div class="col s3">
-                    <div class="card-panel grey lighten-5 z-depth-1">
-                        <p>Name :</p>
-                        <p>Company :</p>
-                        <p>Insead :</p>
-                        <p>Position :</p>
-                    </div>
+                <div class="col s3 card center">
+
+                    <p >John Doe</p>
+                    <p>Westinghouse</p>
+                    <p>Fontainebleau</p>
+                    <p>CEO</p>
+
                 </div>
             </div>
         </div>

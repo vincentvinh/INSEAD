@@ -5,15 +5,26 @@
 
 h1
 {
-    margin: 0;
-    height: 150px;
-    font-size: 5em;
-    text-align: center;
+    /*margin:auto;*/
+    /*height: 50px;*/
+    /*font-size: 2em;*/
+    font:Roboto;
 
-    background: #fbfbfb;
 }
 #result-desc img
 {
-    height: 100px;
+    height: 80px;
 
+}
+.menu-bar
+{
+
+}
+#search
+{
+
+}
+#index
+{
+    margin-top: 50px;
 }

@@ -32,7 +32,10 @@ $('input.autocomplete').autocomplete({
 });
 
 $('#time-demo').formatter({
-    'pattern': '{{99}}-{{99}}',
+    'pattern': '{{99}}-{{99}}'
+});
+$('#time-demo2').formatter({
+    'pattern': '{{99}}-{{99}}'
 });
 $(document).ready(function(){
     $('.collapsible').collapsible();

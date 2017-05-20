@@ -1,15 +1,19 @@
 {% extends '@PLATFORM/layout.html.twig' %}
 
 {% block body %}
-<div class="container">
+
+<div class="container light-blue lighten-5">
     <div class="row">
         <h1>Profil of ..........</h1>
         <div class="col s6">
             <div class="col s12 center">
-                <img src="{{ asset('bundles/platform/img/photp.png') }}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                <img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
             </div>
 <div class="col s12 center">
-            <input class="btn-large" type="submit" value="INVITE"> </div>
+    <a class="btn"  onclick="Materialize.toast('your message is sent', 4000,'rounded',function(){alert('Your invite has been accepted')})">
+     INVITE</a>
+
+        </div>
         </div>
         <div class="col s6">
             <div class="card-panel grey lighten-5 z-depth-1">

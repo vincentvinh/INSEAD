@@ -22,4 +22,16 @@ class ProfilController extends Controller
     {
         return $this->render('@PLATFORM/profil/search.html.twig');
     }
+    public function chatAction()
+    {
+        return $this->render('@PLATFORM/profil/chat_profil.html.twig');
+    }
+    public function MyProfilAction()
+    {
+        return $this->render('PLATFORMBundle:profil:MyProfil.html.twig');
+    }
+    public function ChatProfilBisAction()
+    {
+        return $this->render('PLATFORMBundle:profil:chat_profil_bis.html.twig');
+    }
 }

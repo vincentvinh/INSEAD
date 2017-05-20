@@ -13,3 +13,15 @@ creation_profil:
 search_profil:
     path:     /search
     defaults: { _controller: PLATFORMBundle:Profil:search }
+
+chat_profil:
+    path:     /profil_chat
+    defaults: { _controller: PLATFORMBundle:Profil:chat }
+
+my_profil:
+    path:     /MyProfil
+    defaults: { _controller: PLATFORMBundle:Profil:MyProfil }
+
+chat_profil_bis:
+    path:     /profil_chat_bis
+    defaults: { _controller: PLATFORMBundle:Profil:chatProfilBis }
