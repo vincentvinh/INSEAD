@@ -13,8 +13,14 @@ h1
 }
 #result-desc img
 {
-    height: 80px;
+    background: rgba(76, 175, 80, 0.1);
+    opacity: 0.4!important;
 
+}
+#result-desc img:hover
+{
+
+    opacity:1!important;
 }
 .menu-bar
 {
