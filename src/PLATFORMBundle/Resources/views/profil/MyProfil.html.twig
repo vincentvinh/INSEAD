@@ -4,30 +4,33 @@
 
     <div class="container">
         <div class="row">
-            <h1>Profil of ..........</h1>
             <div class="col s6">
                 <div class="col s12 center">
-                    <img src="{{ asset('bundles/platform/img/photp.png') }}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                    <img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
                 </div>
                 <div class="col s12 center">
-                    <a class="btn" href="{{ path('creation_profil') }}">edit your profil</a>
+                    <a class="btn" href="{{ path('creation_profil') }}">Edit <i class="material-icons">edit</i></a>
+
                 </div>
             </div>
             <div class="col s6">
                 <div class="card-panel grey lighten-5 z-depth-1">
-                    <p>Name :</p>
-                    <p>Company :</p>
-                    <p>Insead :</p>
-                    <p>Position :</p>
+
+                    <p>Name : Mr Bean</p>
+                    <p>Company : CAC 40</p>
+                    <p>Insead : Fontainebleau</p>
+                    <p>Position : CEO</p>
+
+                    <a class="btn" href="{{ path('creation_profil') }}">Edit <i class="material-icons">edit</i></a>
                 </div>
                 <div class="card-panel grey lighten-5 z-depth-1">
 
                     <a href="#"> Calendar</a>
                     <p>Hobbies</p>
-                    <p>#</p>
-                    <p>#</p>
-                    <p>#</p>
-                    <p>#</p>
+                    <p>#Coffee</p>
+                    <p>#Tennis</p>
+                    <p>#Climbing</p>
+                    <a class="btn" href="{{ path('creation_profil') }}">Edit <i class="material-icons">edit</i></a>
                 </div>
             </div>
         </div>
