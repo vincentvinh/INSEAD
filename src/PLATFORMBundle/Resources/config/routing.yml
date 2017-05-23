@@ -1,6 +1,15 @@
+platform_user:
+    resource: "@PLATFORMBundle/Resources/config/routing/admin.yml"
+    prefix:   /admin
+
 platform_homepage:
     path:     /
     defaults: { _controller: PLATFORMBundle:Profil:index }
+
+user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PLATFORMBundle:Profil:edit" }
+    methods:  [GET, POST]
 
 profil:
     path:     /profil

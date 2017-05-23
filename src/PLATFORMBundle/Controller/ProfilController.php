@@ -2,7 +2,9 @@
 
 namespace PLATFORMBundle\Controller;
 
+use PLATFORMBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class ProfilController extends Controller
 {
@@ -33,5 +35,31 @@ class ProfilController extends Controller
     public function ChatProfilBisAction()
     {
         return $this->render('PLATFORMBundle:profil:chat_profil_bis.html.twig');
+    }
+    public function editAction(Request $request, User $user)
+    {
+        $deleteForm = $this->createDeleteForm($user);
+        $editForm = $this->createForm('PLATFORMBundle\Form\UserType', $user);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
+        }
+
+        return $this->render('@PLATFORM/profil/edit.html.twig', array(
+            'user' => $user,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+    private function createDeleteForm(User $user)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('user_delete', array('id' => $user->getId())))
+            ->setMethod('DELETE')
+            ->getForm()
+            ;
     }
 }
