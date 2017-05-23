@@ -13,15 +13,20 @@ PLATFORMBundle\Entity\User:
         lastName:
             type: string
             length: 255
+
         company:
             type: string
             length: 255
+            nullable: true
         position:
             type: string
             length: 255
+            nullable: true
         insead:
             type: string
             length: 255
+            nullable: true
+
 
 
     lifecycleCallbacks: {  }

@@ -16,6 +16,15 @@ class User extends BaseUser
 
     protected $id;
 
+
+    public function setEmail($email)
+    {
+            $email =is_null($email) ? '' : $email;
+            parent::setEmail($email);
+            $this->setUsername($email);
+            return $this;
+    }
+
     /**
      * @var string
      */
