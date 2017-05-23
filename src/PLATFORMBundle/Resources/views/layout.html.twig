@@ -10,8 +10,8 @@
                     <img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
                 </div>
                 <div class="col s7">
-                    <span class="black-text name">John Doe</span>
-                    <span class="black-text email">jdandturk@gmail.com</span>
+                    <span class="black-text name">  {{ app.user.firstName }}</span>
+                    <span class="black-text email">{{ app.user.email }}</span>
                 </div>
 
             </div>

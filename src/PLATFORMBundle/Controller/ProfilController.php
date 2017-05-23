@@ -57,7 +57,7 @@ class ProfilController extends Controller
     private function createDeleteForm(User $user)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('user_delete', array('id' => $user->getId())))
+            ->setAction($this->generateUrl('admin_delete', array('id' => $user->getId())))
             ->setMethod('DELETE')
             ->getForm()
             ;

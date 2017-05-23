@@ -1,21 +1,19 @@
-user_index:
+admin_index:
     path:     /
     defaults: { _controller: "PLATFORMBundle:Admin:index" }
     methods:  GET
 
-user_show:
+admin_show:
     path:     /{id}/show
     defaults: { _controller: "PLATFORMBundle:Admin:show" }
     methods:  GET
 
-user_new:
+admin_new:
     path:     /new
     defaults: { _controller: "PLATFORMBundle:Admin:new" }
     methods:  [GET, POST]
 
-
-
-user_delete:
+admin_delete:
     path:     /{id}/delete
     defaults: { _controller: "PLATFORMBundle:Admin:delete" }
     methods:  DELETE
