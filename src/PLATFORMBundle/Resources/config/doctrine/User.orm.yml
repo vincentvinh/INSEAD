@@ -6,6 +6,28 @@ PLATFORMBundle\Entity\User:
             type: integer
             generator:
                 strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+        company:
+            type: string
+            length: 255
+        position:
+            type: string
+            length: 255
+        insead:
+            type: string
+            length: 255
 
 
     lifecycleCallbacks: {  }
+
+    oneToMany:
+        monActivites:
+            targetEntity: PLATFORMBundle\Entity\MonActivite
+            mappedBy: profil
+

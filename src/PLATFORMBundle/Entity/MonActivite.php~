@@ -1,0 +1,12 @@
+<?php
+
+namespace PLATFORMBundle\Entity;
+
+/**
+ * MonActivite
+ */
+class MonActivite
+{
+
+}
+

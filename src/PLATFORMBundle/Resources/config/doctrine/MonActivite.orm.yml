@@ -1,0 +1,33 @@
+PLATFORMBundle\Entity\MonActivite:
+    type: entity
+    table: null
+    repositoryClass: PLATFORMBundle\Repository\MonActiviteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        date:
+            type: datetime
+            nullable: true
+        time1:
+            type: time
+        time2:
+            type: time
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        profil:
+            targetEntity: PLATFORMBundle\Entity\User
+            inversedBy: monActivites
+
+    manyToMany:
+        locations:
+            targetEntity: PLATFORMBundle\Entity\Location
+            mappedBy: monActivites
+
+        activites:
+            targetEntity: PLATFORMBundle\Entity\Activity
+            mappedBy: monActivites

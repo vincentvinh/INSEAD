@@ -7,8 +7,10 @@ namespace PLATFORMBundle\Entity;
  */
 class Activity
 {
+
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +19,23 @@ class Activity
      */
     private $activity;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $monActivites;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->monActivites = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -51,5 +65,38 @@ class Activity
     {
         return $this->activity;
     }
-}
 
+    /**
+     * Add monActivite
+     *
+     * @param \PLATFORMBundle\Entity\MonActivite $monActivite
+     *
+     * @return Activity
+     */
+    public function addMonActivite(\PLATFORMBundle\Entity\MonActivite $monActivite)
+    {
+        $this->monActivites[] = $monActivite;
+
+        return $this;
+    }
+
+    /**
+     * Remove monActivite
+     *
+     * @param \PLATFORMBundle\Entity\MonActivite $monActivite
+     */
+    public function removeMonActivite(\PLATFORMBundle\Entity\MonActivite $monActivite)
+    {
+        $this->monActivites->removeElement($monActivite);
+    }
+
+    /**
+     * Get monActivites
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMonActivites()
+    {
+        return $this->monActivites;
+    }
+}

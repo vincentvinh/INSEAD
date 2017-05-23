@@ -13,3 +13,8 @@ PLATFORMBundle\Entity\Activity:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
+    manyToMany:
+        monActivites:
+            targetEntity: PLATFORMBundle\Entity\MonActivite
+            inversedBy: activites
