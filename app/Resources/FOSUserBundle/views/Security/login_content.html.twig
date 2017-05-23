@@ -5,12 +5,12 @@
 {% endif %}
 <div class="container">
     <div class="row">
-
-        <div class="col s6"><img src="{{ asset('bundles/platform/img/Logo_Insead.png') }}" alt="INSEAD" class="responsive-img"></div>
-        <div class="col s6"><img src="{{ asset('bundles/platform/img/Logo_Insead.png') }}" alt="INSEAD" class="responsive-img"></div>
-
+        <div class="center">
+       <div class="col s6"> <img src="{{ asset('bundles/platform/img/Yomo.png') }}" alt="INSEAD" class="responsive-img"></div>
+    </div>
     </div>
     <div class="row">
+        <div class="col offset-s3 col s6">
         <form class="" action="{{ path("fos_user_security_check") }}" method="post">
             {% if csrf_token %}
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
@@ -23,14 +23,17 @@
             <input class="center-align" type="password" id="password" name="_password" required="required" />
 
             <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label></br>
 
-            <input class="btn" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+            <input class="btn green center" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+
         </form>
+        </div>
     </div>
     <div class="row">
-        <div class="card-panel blue-grey">
-            <p class="center-align">Be known or be shown</p>
+        <div class="col offset-s4 col s4">
+            <h1 class="center-align">YOMO</h1>
+            <a href="{{ path('fos_user_registration_register') }}"><input class="btn green" name="Register" value="register" /></a>
         </div>
     </div>
 </div>

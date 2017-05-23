@@ -31,12 +31,10 @@ $('input.autocomplete').autocomplete({
     minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
 });
 
-$('#time-demo').formatter({
+$('.time-demo').formatter({
     'pattern': '{{99}}-{{99}}'
 });
-$('#time-demo2').formatter({
-    'pattern': '{{99}}-{{99}}'
-});
+
 $(document).ready(function(){
     $('.collapsible').collapsible();
 });

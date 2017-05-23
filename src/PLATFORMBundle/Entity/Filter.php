@@ -3,9 +3,9 @@
 namespace PLATFORMBundle\Entity;
 
 /**
- * Date
+ * Filter
  */
-class Date
+class Filter
 {
     /**
      * @var int
@@ -20,7 +20,12 @@ class Date
     /**
      * @var \DateTime
      */
-    private $date2;
+    private $time1;
+
+    /**
+     * @var \DateTime
+     */
+    private $time2;
 
 
     /**
@@ -38,7 +43,7 @@ class Date
      *
      * @param \DateTime $date
      *
-     * @return Date
+     * @return Filter
      */
     public function setDate($date)
     {
@@ -58,27 +63,51 @@ class Date
     }
 
     /**
-     * Set date2
+     * Set time1
      *
-     * @param \DateTime $date2
+     * @param \DateTime $time1
      *
-     * @return Date
+     * @return Filter
      */
-    public function setDate2($date2)
+    public function setTime1($time1)
     {
-        $this->date2 = $date2;
+        $this->time1 = $time1;
 
         return $this;
     }
 
     /**
-     * Get date2
+     * Get time1
      *
      * @return \DateTime
      */
-    public function getDate2()
+    public function getTime1()
     {
-        return $this->date2;
+        return $this->time1;
+    }
+
+    /**
+     * Set time2
+     *
+     * @param \DateTime $time2
+     *
+     * @return Filter
+     */
+    public function setTime2($time2)
+    {
+        $this->time2 = $time2;
+
+        return $this;
+    }
+
+    /**
+     * Get time2
+     *
+     * @return \DateTime
+     */
+    public function getTime2()
+    {
+        return $this->time2;
     }
 }
 

@@ -3,7 +3,7 @@
 {% block body %}
 
 
-    <div class="container light-blue lighten-5">
+    <div class="container">
 
         <ul class="collapsible" data-collapsible="accordion">
             <li>
@@ -19,12 +19,12 @@
                                 <input placeholder="2017:03:06" id="date" type="date" class="datepicker ">
                                 <label for="date"></label>
                             </div>
-                            <div class="input-field col s6" id="time-demo3">
-                                <input placeholder="00:00" type="text">
-                                <label class="active" for="time_demo3"></label>
+                            <div class="input-field col s6"">
+                                <input class="time-demo" placeholder="00:00" type="text">
+                                <label class="active" for="time-demo"></label>
                             </div>
-                            <div class="input-field col s6" id="time-demo4">
-                                <input placeholder="00:00" type="text">
+                            <div class="input-field col s6"">
+                                <input class="time-demo" placeholder="00:00" type="text">
                                 <label class="active" for="time_demo4"></label>
                             </div>
 
@@ -43,9 +43,6 @@
         </ul>
 
         <div class="row">
-
-
-
             <div id="result-desc">
                 <div class="col s3 center">
                     <div class="col s12">
@@ -69,35 +66,34 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row light-blue lighten-5">
             <div id="result-img">
-                <div class="col s3 card center">
-                    <p >John Doe</p>
+                <div class="col s3 center">
+                    <p>John Doe</p>
                     <p>Westinghouse</p>
                     <p>Fontainebleau</p>
                     <p>CEO</p>
                 </div>
-                <div class="col s3 card center">
-                    <p >John Doe</p>
-                    <p>Westinghouse</p>
+                <div class="col s3 center">
+                    <p>Passi</p>
+                    <p>Amazo</p>
                     <p>Fontainebleau</p>
                     <p>CEO</p>
                 </div>
-                <div class="col s3 card center">
-                        <p >John Doe</p>
-                        <p>Westinghouse</p>
+                <div class="col s3 center">
+                        <p>Jumoe</p>
+                        <p>Google</p>
                         <p>Fontainebleau</p>
                         <p>CEO</p>
                 </div>
-                <div class="col s3 card center">
-                    <p >John Doe</p>
-                    <p>Westinghouse</p>
+                <div class="col s3 center">
+                    <p>Jakhri</p>
+                    <p>Total</p>
                     <p>Fontainebleau</p>
                     <p>CEO</p>
                 </div>
             </div>
         </div>
-
     </div>
 
 {%  endblock %}

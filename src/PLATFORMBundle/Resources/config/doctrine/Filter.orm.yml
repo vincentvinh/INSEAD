@@ -1,7 +1,7 @@
-PLATFORMBundle\Entity\Date:
+PLATFORMBundle\Entity\Filter:
     type: entity
     table: null
-    repositoryClass: PLATFORMBundle\Repository\DateRepository
+    repositoryClass: PLATFORMBundle\Repository\FilterRepository
     id:
         id:
             type: integer
@@ -11,6 +11,10 @@ PLATFORMBundle\Entity\Date:
     fields:
         date:
             type: datetime
-        date2:
-            type: datetime
+        time1:
+            type: time
+            column: time_1
+        time2:
+            type: time
+            column: time_2
     lifecycleCallbacks: {  }
