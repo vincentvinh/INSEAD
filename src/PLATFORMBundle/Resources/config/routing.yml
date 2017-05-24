@@ -25,3 +25,7 @@ my_profil:
 chat_profil_bis:
     path:     /profil_chat_bis
     defaults: { _controller: PLATFORMBundle:Profil:chatProfilBis }
+
+connection_profil:
+    path:     /profil_connection
+    defaults: { _controller: PLATFORMBundle:Profil:connection }

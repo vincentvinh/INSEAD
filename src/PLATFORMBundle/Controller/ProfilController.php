@@ -34,4 +34,9 @@ class ProfilController extends Controller
     {
         return $this->render('PLATFORMBundle:profil:chat_profil_bis.html.twig');
     }
+    public function connectionAction()
+    {
+        return $this->render('PLATFORMBundle:profil:connection.html.twig');
+    }
+
 }
