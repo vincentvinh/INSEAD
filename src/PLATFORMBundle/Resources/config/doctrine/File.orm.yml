@@ -18,4 +18,10 @@ PLATFORMBundle\Entity\File:
         alt:
             type: string
             length: 255
+
+    oneToOne:
+        fichier:
+            targetEntity: PLATFORMBundle\Entity\User
+            inversedBy: file
+            cascade: ["all"]
     lifecycleCallbacks: {  }

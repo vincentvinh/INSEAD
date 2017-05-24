@@ -109,33 +109,5 @@ class File
     {
         return $this->alt;
     }
-    /**
-     * @var \PLATFORMBundle\Entity\User
-     */
-    private $fichier;
-
-
-    /**
-     * Set fichier
-     *
-     * @param \PLATFORMBundle\Entity\User $fichier
-     *
-     * @return File
-     */
-    public function setFichier(\PLATFORMBundle\Entity\User $fichier = null)
-    {
-        $this->fichier = $fichier;
-
-        return $this;
-    }
-
-    /**
-     * Get fichier
-     *
-     * @return \PLATFORMBundle\Entity\User
-     */
-    public function getFichier()
-    {
-        return $this->fichier;
-    }
 }
+

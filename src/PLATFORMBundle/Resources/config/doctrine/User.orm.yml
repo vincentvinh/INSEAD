@@ -30,7 +30,11 @@ PLATFORMBundle\Entity\User:
 
 
     lifecycleCallbacks: {  }
-
+    oneToOne:
+        file:
+            targetEntity: PLATFORMBundle\Entity\File
+            mappedBy: fichier
+            cascade: ["all"]
     oneToMany:
         monActivites:
             targetEntity: PLATFORMBundle\Entity\MonActivite

@@ -209,4 +209,33 @@ class User extends BaseUser
     {
         return $this->monActivites;
     }
+    /**
+     * @var \PLATFORMBundle\Entity\File
+     */
+    private $file;
+
+
+    /**
+     * Set file
+     *
+     * @param \PLATFORMBundle\Entity\File $file
+     *
+     * @return User
+     */
+    public function setFile(\PLATFORMBundle\Entity\File $file = null)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return \PLATFORMBundle\Entity\File
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
 }
