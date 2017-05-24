@@ -9,30 +9,30 @@
                     <img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
                 </div>
                 <div class="col s12 center">
-                    <a class="btn" href="{{ path('creation_profil') }}">Edit <i class="material-icons">edit</i></a>
+                    <a class="btn" href="#">Edit <i class="material-icons">edit</i></a>
 
                 </div>
             </div>
             <div class="col s6">
-                <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="card-panel grey darken-3 white-text z-depth-1">
+<ul>
 
-
-                    {{ app.user.firstName }}
-                    {{ app.user.lastName }}
-                    {{ app.user.company }}
-                    {{ app.user.position }}
-                    {{ app.user.insead }}
-
+    <li>first: {{ app.user.firstName }}</li>
+    <li>last: {{ app.user.lastName }}</li>
+    <li>Company : {{ app.user.company }}</li>
+    <li>Position : {{ app.user.position }}</li>
+    <li>Insead : {{ app.user.insead }}</li>
+</ul>
                     <a class="btn" href="{{ path('user_edit', {id: app.user.id } ) }}">Edit <i class="material-icons">edit</i></a>
                 </div>
-                <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="card-panel grey darken-3 white-text z-depth-1">
 
                     <a href="#"> Calendar</a>
                     <p>Hobbies</p>
                     <p>#Coffee</p>
                     <p>#Tennis</p>
                     <p>#Climbing</p>
-                    <a class="btn" href="{{ path('creation_profil') }}">Edit <i class="material-icons">edit</i></a>
+                    <a class="btn" href="#">Edit <i class="material-icons">edit</i></a>
                 </div>
             </div>
         </div>

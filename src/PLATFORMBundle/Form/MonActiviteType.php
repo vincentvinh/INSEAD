@@ -6,6 +6,7 @@ namespace PLATFORMBundle\Form;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,11 +18,19 @@ class MonActiviteType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date', DateTimeType::class, array(
-            'date_widget' => 'single_text'
+        $builder->add('date', DateType::class, array(
+            'widget' => 'single_text'
         ))
-            ->add('time1', TimeType::class)
-            ->add('time2', TimeType::class)
+            ->add('time1', TimeType::class, array(
+                'input' => 'datetime',
+                'widget' => 'choice',
+                'minutes' => array('00', '15', '30', '45'),
+            ))
+            ->add('time2', TimeType::class, array(
+        'input' => 'datetime',
+        'widget' => 'choice',
+        'minutes' => array('00', '15', '30', '45'),
+             ))
             ->add('locations')
             ->add('activites');
     }

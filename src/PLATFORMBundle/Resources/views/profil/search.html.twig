@@ -10,11 +10,7 @@
                 <div class="collapsible-header"><i class="material-icons">mode_edit </i>Search filters</div>
                 <div class="collapsible-body">
                     <div id="search">
-                        <form action="{{ path('platform_homepage') }}" >
-
-
-                            <input type="submit" value="Create" />
-                            {{ form_end(form) }}
+                        <form action="{{ path('platform_search') }}" >
 
                             <div class="input-field col s6">
                                 <input id="location" type="text" class="validate">
@@ -49,54 +45,45 @@
 
         <div class="row">
             <div id="result-desc">
-                <div class="col s3 center">
+                <div class="col s4 center">
                     <div class="col s12">
                         <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
                     </div>
                 </div>
-                <div class="col s3 center">
+                <div class="col s4 center">
                     <div class="col s12">
-                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
+                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/Trump.jpg') }}" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
                     </div>
                 </div>
-                <div class="col s3">
-                    <div class="col s12 center">
-                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
+                <div class="col s4 center">
+                    <div class="col s12">
+                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/rsz_1zukergerg.jpg') }}" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
                     </div>
                 </div>
-                <div class="col s3">
-                    <div class="col s12 center">
-                        <a href={{ path('profil') }}><img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="row light-blue lighten-5">
             <div id="result-img">
-                <div class="col s3 center">
+                <div class="col s4 center grey darken-3 white-text">
                     <p>John Doe</p>
                     <p>Westinghouse</p>
                     <p>Fontainebleau</p>
                     <p>CEO</p>
                 </div>
-                <div class="col s3 center">
+                <div class="col s4 center grey darken-3 white-text">
                     <p>Passi</p>
                     <p>Amazo</p>
                     <p>Fontainebleau</p>
                     <p>CEO</p>
                 </div>
-                <div class="col s3 center">
+                <div class="col s4 center grey darken-3 white-text">
                         <p>Jumoe</p>
                         <p>Google</p>
                         <p>Fontainebleau</p>
                         <p>CEO</p>
                 </div>
-                <div class="col s3 center">
-                    <p>Jakhri</p>
-                    <p>Total</p>
-                    <p>Fontainebleau</p>
-                    <p>CEO</p>
-                </div>
+
             </div>
         </div>
     </div>

@@ -18,3 +18,4 @@ PLATFORMBundle\Entity\Activity:
         monActivites:
             targetEntity: PLATFORMBundle\Entity\MonActivite
             inversedBy: activites
+            cascade: ["all"]

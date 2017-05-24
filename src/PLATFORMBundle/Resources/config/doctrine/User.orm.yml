@@ -35,4 +35,5 @@ PLATFORMBundle\Entity\User:
         monActivites:
             targetEntity: PLATFORMBundle\Entity\MonActivite
             mappedBy: profil
+            cascade: ["all"]
 

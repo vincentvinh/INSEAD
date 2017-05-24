@@ -10,7 +10,7 @@ PLATFORMBundle\Entity\MonActivite:
                 strategy: AUTO
     fields:
         date:
-            type: datetime
+            type: date
             nullable: true
         time1:
             type: time
@@ -24,12 +24,16 @@ PLATFORMBundle\Entity\MonActivite:
         profil:
             targetEntity: PLATFORMBundle\Entity\User
             inversedBy: monActivites
+            cascade: ["all"]
 
     manyToMany:
         locations:
             targetEntity: PLATFORMBundle\Entity\Location
             mappedBy: monActivites
+            cascade: ["all"]
+
 
         activites:
             targetEntity: PLATFORMBundle\Entity\Activity
             mappedBy: monActivites
+            cascade: ["all"]

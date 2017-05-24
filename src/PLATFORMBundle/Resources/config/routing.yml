@@ -16,6 +16,10 @@ platform_homepage:
     path:     /
     defaults: { _controller: PLATFORMBundle:Profil:search }
 
+platform_search:
+    path:     /search
+    defaults: { _controller: PLATFORMBundle:Profil:index }
+
 user_edit:
     path:     /{id}/edit
     defaults: { _controller: PLATFORMBundle:Profil:edit }

@@ -18,3 +18,4 @@ PLATFORMBundle\Entity\Location:
         monActivites:
             targetEntity: PLATFORMBundle\Entity\MonActivite
             inversedBy: locations
+            cascade: ["all"]

@@ -11,7 +11,7 @@ class ProfilController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('@PLATFORM/profil/index.html.twig');
+        return $this->render('@PLATFORM/profil/search.html.twig');
     }
     public function profilAction()
     {
@@ -72,18 +72,22 @@ class ProfilController extends Controller
         $form = $this->createForm('PLATFORMBundle\Form\MonActiviteType',$monActivite);
         $form->handleRequest($request);
 //      dump($form->getData());die();
+//        $location = $request->request->get('locations');
+//        $activity = $request->request->get('activites');
 
 $user = $this->getUser();
 //$location = $this->g
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
+//          dump($request);die();
+//            $monActivite->addLocation($location);
+//            $monActivite->addActivite();
             $monActivite->setProfil($user);
             $em->persist($monActivite);
 
             $em->flush();
-            return $this->redirectToRoute('monactivite_show', array('id' => $monActivite->getId()));
+            return $this->redirectToRoute('platform_search');
         }
 
         return $this->render('@PLATFORM/profil/index.html.twig', array(
