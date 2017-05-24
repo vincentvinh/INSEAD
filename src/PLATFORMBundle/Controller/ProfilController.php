@@ -2,6 +2,7 @@
 
 namespace PLATFORMBundle\Controller;
 
+use PLATFORMBundle\Entity\MonActivite;
 use PLATFORMBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,10 +21,7 @@ class ProfilController extends Controller
     {
         return $this->render('@PLATFORM/profil/createProfil.html.twig');
     }
-    public function searchAction()
-    {
-        return $this->render('@PLATFORM/profil/search.html.twig');
-    }
+
     public function chatAction()
     {
         return $this->render('@PLATFORM/profil/chat_profil.html.twig');
@@ -31,6 +29,10 @@ class ProfilController extends Controller
     public function MyProfilAction()
     {
         return $this->render('PLATFORMBundle:profil:MyProfil.html.twig');
+    }
+    public function connectionAction()
+    {
+        return $this->render('PLATFORMBundle:profil:connection.html.twig');
     }
     public function ChatProfilBisAction()
     {
@@ -58,6 +60,50 @@ class ProfilController extends Controller
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('admin_delete', array('id' => $user->getId())))
+            ->setMethod('DELETE')
+            ->getForm()
+            ;
+    }
+    public function searchAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $monActivite = new MonActivite();
+        $form = $this->createForm('PLATFORMBundle\Form\MonActiviteType',$monActivite);
+        $form->handleRequest($request);
+//      dump($form->getData());die();
+
+$user = $this->getUser();
+//$location = $this->g
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $monActivite->setProfil($user);
+            $em->persist($monActivite);
+
+            $em->flush();
+            return $this->redirectToRoute('monactivite_show', array('id' => $monActivite->getId()));
+        }
+
+        return $this->render('@PLATFORM/profil/index.html.twig', array(
+            'monActivite' => $monActivite,
+            'form' => $form->createView(),
+        ));
+    }
+    public function showAction(MonActivite $monActivite)
+    {
+        $deleteForm = $this->createDeleteactiForm($monActivite);
+
+        return $this->render('@PLATFORM/profil/show.html.twig', array(
+            'monActivite' => $monActivite,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+    private function createDeleteactiForm(MonActivite $monActivite)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('monactivite_delete', array('id' => $monActivite->getId())))
             ->setMethod('DELETE')
             ->getForm()
             ;

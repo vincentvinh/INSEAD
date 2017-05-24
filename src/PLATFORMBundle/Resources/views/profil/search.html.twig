@@ -10,7 +10,12 @@
                 <div class="collapsible-header"><i class="material-icons">mode_edit </i>Search filters</div>
                 <div class="collapsible-body">
                     <div id="search">
-                        <form action="{{ path('search_profil') }}" >
+                        <form action="{{ path('platform_homepage') }}" >
+
+
+                            <input type="submit" value="Create" />
+                            {{ form_end(form) }}
+
                             <div class="input-field col s6">
                                 <input id="location" type="text" class="validate">
                                 <label for="location">Location</label>

@@ -8,33 +8,23 @@
             <h1>Get a match</h1>
             </div>
             <div id="index">
-                <form action="{{ path('search_profil') }}" >
-                    <div class="input-field col s6">
-                        <input id="location" type="text" class="validate">
-                        <label for="location">Location</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input placeholder="2017:03:06" id="date" type="date" class="datepicker ">
-                        <label for="date"></label>
-                    </div>
-                    <div class="input-field col s6" id="time-demo">
-                        <input placeholder="00:00" type="text">
-                        <label class="active" for="time_demo"></label>
-                    </div>
-                    <div class="input-field col s6" id="time-demo2">
-                        <input placeholder="00:00" type="text">
-                        <label class="active" for="time_demo2"></label>
-                    </div>
+                <h1>Monactivite creation</h1>
 
-                    <div class="input-field col s12 autocomplete">
-                        <input type="text" id="autocomplete-input" >
-                        <label for="autocomplete-input">Activity</label>
-                    </div>
+                {{ form_start(form) }}
+                {{ form_widget(form.date, { 'attr': {'class': 'datepicker','placeholder' :'Click for the time'} }) }}
+                {{ form_widget(form.time1, { 'attr': {'class': 'validate', 'placeholder' :'00:00'} }) }}
+                {{ form_widget(form.time2, { 'attr': {'class': 'validate', 'placeholder' :'00:00'} }) }}
+                {{ form_widget(form) }}
 
-                    <div class="input-field col s12 center">
-                        <input type="submit" value="search" class="btn btn-primary "/>
-                    </div>
-                </form>
+
+                <input type="submit" value="Create" />
+                {{ form_end(form) }}
+
+                <ul>
+                    <li>
+                        <a href="{{ path('monactivite_index') }}">Back to the list</a>
+                    </li>
+                </ul>
 
             </div>
         </div>

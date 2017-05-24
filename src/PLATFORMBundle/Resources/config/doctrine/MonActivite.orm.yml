@@ -14,8 +14,10 @@ PLATFORMBundle\Entity\MonActivite:
             nullable: true
         time1:
             type: time
+            nullable: true
         time2:
             type: time
+            nullable: true
     lifecycleCallbacks: {  }
 
     manyToOne:

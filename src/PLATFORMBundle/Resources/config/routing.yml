@@ -2,13 +2,23 @@ platform_user:
     resource: "@PLATFORMBundle/Resources/config/routing/admin.yml"
     prefix:   /admin
 
+platform_monactivite:
+    resource: "@PLATFORMBundle/Resources/config/routing/monactivite.yml"
+    prefix:   /monactivite
+
+monactivite_show:
+    path:     /{id}/show
+    defaults: { _controller: "PLATFORMBundle:Profil:show" }
+    methods:  GET
+
+
 platform_homepage:
     path:     /
-    defaults: { _controller: PLATFORMBundle:Profil:index }
+    defaults: { _controller: PLATFORMBundle:Profil:search }
 
 user_edit:
     path:     /{id}/edit
-    defaults: { _controller: "PLATFORMBundle:Profil:edit" }
+    defaults: { _controller: PLATFORMBundle:Profil:edit }
     methods:  [GET, POST]
 
 profil:
@@ -18,10 +28,6 @@ profil:
 creation_profil:
     path:     /create
     defaults: { _controller: PLATFORMBundle:Profil:create }
-
-search_profil:
-    path:     /search
-    defaults: { _controller: PLATFORMBundle:Profil:search }
 
 chat_profil:
     path:     /profil_chat
@@ -34,3 +40,7 @@ my_profil:
 chat_profil_bis:
     path:     /profil_chat_bis
     defaults: { _controller: PLATFORMBundle:Profil:chatProfilBis }
+
+connection_profil:
+    path:     /connection
+    defaults: { _controller: PLATFORMBundle:Profil:connection }

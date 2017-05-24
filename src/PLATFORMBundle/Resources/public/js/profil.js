@@ -1,5 +1,7 @@
 // Initialize collapse button
-
+$(document).ready(function(){
+    $('select').material_select();
+});
 // Initialize collapsible (uncomment the line below if you use the dropdown variation)
 $('.button-collapse').sideNav({
         menuWidth: 300, // Default is 300
@@ -38,3 +40,4 @@ $('.time-demo').formatter({
 $(document).ready(function(){
     $('.collapsible').collapsible();
 });
+

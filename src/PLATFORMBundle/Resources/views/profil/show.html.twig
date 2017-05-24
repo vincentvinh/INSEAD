@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Monactivite</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ monActivite.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if monActivite.date %}{{ monActivite.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Time1</th>
+                <td>{% if monActivite.time1 %}{{ monActivite.time1|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Time2</th>
+                <td>{% if monActivite.time2 %}{{ monActivite.time2|date('H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('monactivite_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('monactivite_edit', { 'id': monActivite.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

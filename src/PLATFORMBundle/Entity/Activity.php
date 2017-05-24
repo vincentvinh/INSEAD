@@ -8,7 +8,11 @@ namespace PLATFORMBundle\Entity;
 class Activity
 {
 
-
+    public function __toString()
+    {
+        return $this->activity;
+    }
+    // generated
     /**
      * @var integer
      */

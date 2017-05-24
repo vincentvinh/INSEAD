@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Monactivites list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Time1</th>
+                <th>Time2</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for monActivite in monActivites %}
+            <tr>
+                <td><a href="{{ path('monactivite_show', { 'id': monActivite.id }) }}">{{ monActivite.id }}</a></td>
+                <td>{% if monActivite.date %}{{ monActivite.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if monActivite.time1 %}{{ monActivite.time1|date('H:i:s') }}{% endif %}</td>
+                <td>{% if monActivite.time2 %}{{ monActivite.time2|date('H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('monactivite_show', { 'id': monActivite.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('monactivite_edit', { 'id': monActivite.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('monactivite_new') }}">Create a new monActivite</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -7,7 +7,11 @@ namespace PLATFORMBundle\Entity;
  */
 class Location
 {
-
+    public function __toString()
+    {
+       return $this->location;
+    }
+    // generated
     
     /**
      * @var integer

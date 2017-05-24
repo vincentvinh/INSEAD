@@ -1,0 +1,20 @@
+monactivite_index:
+    path:     /
+    defaults: { _controller: "PLATFORMBundle:MonActivite:index" }
+    methods:  GET
+
+
+monactivite_new:
+    path:     /new
+    defaults: { _controller: "PLATFORMBundle:MonActivite:new" }
+    methods:  [GET, POST]
+
+monactivite_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PLATFORMBundle:MonActivite:edit" }
+    methods:  [GET, POST]
+
+monactivite_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PLATFORMBundle:MonActivite:delete" }
+    methods:  DELETE
