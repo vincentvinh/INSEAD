@@ -3,7 +3,7 @@
 {% block body %}
 
     <div class="container">
-        <div class="row grey darken-3 white-text">
+        <div class="row grey darken-3 white-text center">
             <div class="center">
             <h1>Get a match</h1>
             </div>
@@ -11,12 +11,12 @@
 
 
                 {{ form_start(form) }}
-                {{ form_widget(form.date, { 'attr': {'class': 'datepicker','placeholder' :'Click for the time'} }) }}
-                <div class="">
+                {{ form_widget(form.date, { 'attr': {'placeholder' :'Click for the time'} }) }}
+
                     {{ form_label(form.time1, "heure", {'label_attr': {'class':'control-label'}}) }}
                     {{ form_widget(form.time1, { 'attr': {'class': 'validate', 'placeholder' :'00:00'} }) }}
                     {{ form_errors(form.time1) }}
-                </div>
+
                 {{ form_label(form.time2, "heure", {'label_attr': {'class':'control-label'}}) }}
                 {{ form_widget(form.time2, { 'attr': {'class': 'validate', 'placeholder' :'00:00'} }) }}
                 {{ form_errors(form.time2) }}

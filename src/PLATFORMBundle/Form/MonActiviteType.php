@@ -22,15 +22,11 @@ class MonActiviteType extends AbstractType
             'widget' => 'single_text'
         ))
             ->add('time1', TimeType::class, array(
-                'input' => 'datetime',
-                'widget' => 'choice',
-                'minutes' => array('00', '15', '30', '45'),
-            ))
-            ->add('time2', TimeType::class, array(
         'input' => 'datetime',
-        'widget' => 'choice',
-        'minutes' => array('00', '15', '30', '45'),
-             ))
+        'widget' => 'single_text'))
+            ->add('time2',  TimeType::class, array(
+                'input' => 'datetime',
+                'widget' => 'single_text'))
             ->add('locations')
             ->add('activites');
     }
