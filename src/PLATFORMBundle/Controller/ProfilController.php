@@ -2,11 +2,12 @@
 
 namespace PLATFORMBundle\Controller;
 
+use PLATFORMBundle\Entity\FileImage;
 use PLATFORMBundle\Entity\MonActivite;
 use PLATFORMBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use PLATFORMBundle\FileUploader;
+
 
 class ProfilController extends Controller
 {
@@ -47,14 +48,15 @@ class ProfilController extends Controller
     public function editAction(Request $request, User $user)
     {
         $deleteForm = $this->createDeleteForm($user);
+
         $editForm = $this->createForm('PLATFORMBundle\Form\UserType', $user);
+
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
             $em = $this->getDoctrine()->getManager();
-            $file = $user->getFile();
-            $fileName = $this->get('app.brochure_uploader')->upload($file);
-            $user->setFile($fileName);
+
             $em->flush();
 
             return $this->redirectToRoute('my_profil');

@@ -51,6 +51,11 @@ class User extends BaseUser
     private $insead;
 
     /**
+     * @var \PLATFORMBundle\Entity\FileImage
+     */
+    private $file;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $monActivites;
@@ -177,6 +182,30 @@ class User extends BaseUser
     }
 
     /**
+     * Set file
+     *
+     * @param \PLATFORMBundle\Entity\FileImage $file
+     *
+     * @return User
+     */
+    public function setFile(\PLATFORMBundle\Entity\FileImage $file = null)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return \PLATFORMBundle\Entity\FileImage
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
      * Add monActivite
      *
      * @param \PLATFORMBundle\Entity\MonActivite $monActivite
@@ -208,34 +237,5 @@ class User extends BaseUser
     public function getMonActivites()
     {
         return $this->monActivites;
-    }
-    /**
-     * @var \PLATFORMBundle\Entity\File
-     */
-    private $file;
-
-
-    /**
-     * Set file
-     *
-     * @param \PLATFORMBundle\Entity\File $file
-     *
-     * @return User
-     */
-    public function setFile(\PLATFORMBundle\Entity\FileImage $file = null)
-    {
-        $this->file = $file;
-
-        return $this;
-    }
-
-    /**
-     * Get file
-     *
-     * @return \PLATFORMBundle\Entity\File
-     */
-    public function getFile()
-    {
-        return $this->file;
     }
 }

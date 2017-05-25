@@ -1,14 +1,23 @@
 <?php
 
 namespace PLATFORMBundle\Entity;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use PLATFORMBundle\Entity\User;
+
+
 
 /**
  * File
  */
 class FileImage
-{
+{ // On ajoute cet attribut pour y stocker le nom du fichier temporairement
+
+
+
+
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -27,11 +36,16 @@ class FileImage
      */
     private $alt;
 
+    /**
+     * @var \PLATFORMBundle\Entity\User
+     */
+    private $fichier;
+
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -43,7 +57,7 @@ class FileImage
      *
      * @param string $filename
      *
-     * @return File
+     * @return FileImage
      */
     public function setFilename($filename)
     {
@@ -67,7 +81,7 @@ class FileImage
      *
      * @param string $url
      *
-     * @return File
+     * @return FileImage
      */
     public function setUrl($url)
     {
@@ -91,7 +105,7 @@ class FileImage
      *
      * @param string $alt
      *
-     * @return File
+     * @return FileImage
      */
     public function setAlt($alt)
     {
@@ -109,18 +123,13 @@ class FileImage
     {
         return $this->alt;
     }
-    /**
-     * @var \PLATFORMBundle\Entity\User
-     */
-    private $fichier;
-
 
     /**
      * Set fichier
      *
      * @param \PLATFORMBundle\Entity\User $fichier
      *
-     * @return File
+     * @return FileImage
      */
     public function setFichier(\PLATFORMBundle\Entity\User $fichier = null)
     {

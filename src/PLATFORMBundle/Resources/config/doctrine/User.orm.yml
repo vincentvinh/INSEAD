@@ -27,8 +27,6 @@ PLATFORMBundle\Entity\User:
             length: 255
             nullable: true
 
-
-
     lifecycleCallbacks: {  }
     oneToOne:
         file:

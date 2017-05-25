@@ -14,7 +14,7 @@ class FileImageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('fichier', \Symfony\Component\Form\Extension\Core\Type\FileType::class);
+        $builder->add('fichier', FileType::class);
     }
     
     /**
@@ -32,7 +32,7 @@ class FileImageType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'platformbundle_file';
+        return 'platformbundle_fileImage';
     }
 
 
