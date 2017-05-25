@@ -41,6 +41,10 @@ my_profil:
     path:     /MyProfil
     defaults: { _controller: PLATFORMBundle:Profil:MyProfil }
 
+my_profil_image:
+    path:     /MyProfilImage
+    defaults: { _controller: PLATFORMBundle:Profil:newImage }
+
 chat_profil_bis:
     path:     /profil_chat_bis
     defaults: { _controller: PLATFORMBundle:Profil:chatProfilBis }

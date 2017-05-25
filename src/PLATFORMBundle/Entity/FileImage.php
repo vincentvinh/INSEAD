@@ -1,8 +1,8 @@
 <?php
 
 namespace PLATFORMBundle\Entity;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use PLATFORMBundle\Entity\User;
+
+use Symfony\Component\HttpFoundation\File\User;
 
 
 
@@ -10,12 +10,8 @@ use PLATFORMBundle\Entity\User;
  * File
  */
 class FileImage
-{ // On ajoute cet attribut pour y stocker le nom du fichier temporairement
-
-
-
-
-
+{
+    
     /**
      * @var integer
      */

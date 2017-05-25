@@ -9,7 +9,7 @@
                     <img src="{{ asset('bundles/platform/img/bean.jpg') }}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
                 </div>
                 <div class="col s12 center">
-                    <a class="btn" href="#">Edit <i class="material-icons">edit</i></a>
+                    <a class="btn" href="{{ path('my_profil_image') }}">Edit <i class="material-icons">edit</i></a>
 
                 </div>
             </div>
@@ -22,7 +22,6 @@
     <li>Company : {{ app.user.company }}</li>
     <li>Position : {{ app.user.position }}</li>
     <li>Insead : {{ app.user.insead }}</li>
-    <li>Img : {{ app.user.file}}</li>
 </ul>
                     <a class="btn" href="{{ path('user_edit', {id: app.user.id } ) }}">Edit <i class="material-icons">edit</i></a>
                 </div>

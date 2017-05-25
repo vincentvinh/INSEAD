@@ -5,8 +5,11 @@ namespace PLATFORMBundle\Controller;
 use PLATFORMBundle\Entity\FileImage;
 use PLATFORMBundle\Entity\MonActivite;
 use PLATFORMBundle\Entity\User;
+use PLATFORMBundle\Form\FileImageType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DomCrawler\Image;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 
 class ProfilController extends Controller
@@ -69,6 +72,43 @@ class ProfilController extends Controller
         ));
     }
 
+    public function newImageAction(Request $request)
+    {
+        $image = new FileImage();
+        $form = $this->createForm(FileImageType::class, $image);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $image->getFilename();
+            // Generate a unique name for the file before saving it
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+            // Move the file to the directory where brochures are stored
+            $file->move(
+                $this->getParameter('brochures_directory'),
+                $fileName
+            );
+
+            // Update the 'brochure' property to store the PDF file name
+            // instead of its contents
+
+            $image->setFilename($fileName);
+           
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($image);
+            $em->flush();
+            // ... persist the $product variable or any other work
+
+            return $this->redirectToRoute('my_profil');
+        }
+
+        return $this->render('@PLATFORM/profil/MyProfilImage.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
 
     private function createDeleteForm(User $user)
     {
