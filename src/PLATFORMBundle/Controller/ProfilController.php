@@ -95,9 +95,11 @@ class ProfilController extends Controller
             // instead of its contents
 
             $image->setFilename($fileName);
-           
-            $em = $this->getDoctrine()->getManager();
 
+            $em = $this->getDoctrine()->getManager();
+            $user = $this->getUser();
+
+$image->setFichier($user);
             $em->persist($image);
             $em->flush();
             // ... persist the $product variable or any other work
@@ -107,6 +109,7 @@ class ProfilController extends Controller
 
         return $this->render('@PLATFORM/profil/MyProfilImage.html.twig', array(
             'form' => $form->createView(),
+            'img' => $image
         ));
     }
 
