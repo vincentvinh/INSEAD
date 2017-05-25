@@ -5,7 +5,7 @@ namespace PLATFORMBundle\Entity;
 /**
  * File
  */
-class File
+class FileImage
 {
     /**
      * @var int

@@ -32,7 +32,7 @@ PLATFORMBundle\Entity\User:
     lifecycleCallbacks: {  }
     oneToOne:
         file:
-            targetEntity: PLATFORMBundle\Entity\File
+            targetEntity: PLATFORMBundle\Entity\FileImage
             mappedBy: fichier
             cascade: ["all"]
     oneToMany:

@@ -5,16 +5,16 @@ namespace PLATFORMBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
-class UserType extends AbstractType
+class FileImageType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('firstName')->add('lastName')->add('company')->add('position')->add('insead')
-        ->add('file', FileImageType::class);
+        $builder->add('fichier', \Symfony\Component\Form\Extension\Core\Type\FileType::class);
     }
     
     /**
@@ -23,7 +23,7 @@ class UserType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'PLATFORMBundle\Entity\User'
+            'data_class' => 'PLATFORMBundle\Entity\FileImage'
         ));
     }
 
@@ -32,7 +32,7 @@ class UserType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'platformbundle_user';
+        return 'platformbundle_file';
     }
 
 

@@ -6,6 +6,7 @@ use PLATFORMBundle\Entity\MonActivite;
 use PLATFORMBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use PLATFORMBundle\FileUploader;
 
 class ProfilController extends Controller
 {
@@ -38,6 +39,11 @@ class ProfilController extends Controller
     {
         return $this->render('PLATFORMBundle:profil:chat_profil_bis.html.twig');
     }
+
+
+    //EDIT MYPROFIL
+
+
     public function editAction(Request $request, User $user)
     {
         $deleteForm = $this->createDeleteForm($user);
@@ -45,9 +51,13 @@ class ProfilController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $em = $this->getDoctrine()->getManager();
+            $file = $user->getFile();
+            $fileName = $this->get('app.brochure_uploader')->upload($file);
+            $user->setFile($fileName);
+            $em->flush();
 
-            return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
+            return $this->redirectToRoute('my_profil');
         }
 
         return $this->render('@PLATFORM/profil/edit.html.twig', array(
@@ -56,6 +66,8 @@ class ProfilController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
+
     private function createDeleteForm(User $user)
     {
         return $this->createFormBuilder()

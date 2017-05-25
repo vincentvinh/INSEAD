@@ -222,7 +222,7 @@ class User extends BaseUser
      *
      * @return User
      */
-    public function setFile(\PLATFORMBundle\Entity\File $file = null)
+    public function setFile(\PLATFORMBundle\Entity\FileImage $file = null)
     {
         $this->file = $file;
 

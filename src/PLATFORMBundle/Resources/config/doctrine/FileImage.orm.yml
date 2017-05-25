@@ -1,7 +1,7 @@
-PLATFORMBundle\Entity\File:
+PLATFORMBundle\Entity\FileImage:
     type: entity
     table: null
-    repositoryClass: PLATFORMBundle\Repository\FileRepository
+    repositoryClass: PLATFORMBundle\Repository\FileImageRepository
     id:
         id:
             type: integer
@@ -12,12 +12,15 @@ PLATFORMBundle\Entity\File:
         filename:
             type: string
             length: 255
+            nullable: true
         url:
             type: string
             length: 255
+            nullable: true
         alt:
             type: string
             length: 255
+            nullable: true
 
     oneToOne:
         fichier:

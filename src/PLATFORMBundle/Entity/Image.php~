@@ -1,0 +1,12 @@
+<?php
+
+namespace PLATFORMBundle\Entity;
+
+/**
+ * Image
+ */
+class Image
+{
+
+}
+
