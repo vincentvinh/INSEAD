@@ -2,7 +2,6 @@
 
 namespace PLATFORMBundle\Entity;
 
-use Symfony\Component\HttpFoundation\File\User;
 
 
 
@@ -11,6 +10,13 @@ use Symfony\Component\HttpFoundation\File\User;
  */
 class FileImage
 {
+    /**
+     * @param int $id
+     */
+    public function __toString()
+    {
+        return $this->filename;
+    }
     
     /**
      * @var integer

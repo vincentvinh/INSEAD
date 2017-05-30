@@ -10,4 +10,10 @@ namespace PLATFORMBundle\Repository;
  */
 class FileImageRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function MyFindOne(){
+        $qb = $this->createQueryBuilder('F');
+        $qb->select('F')
+            ->setMaxResults(1);
+        return $qb->getQuery()->getOneOrNullResult();
+    }
 }

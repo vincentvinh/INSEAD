@@ -2,10 +2,10 @@
 
 {% block body %}
 
-    <a href="{{ asset('bundles/platform/img') }}">View images (PDF)</a>
-    <figure>
-        <img src="{{ asset('bundles/platform/img' ~ img.filename) }}" alt="image">
-    </figure>
+    {% if img.filename is not empty %}
+
+        <img src="{{ asset('bundles/platform/img/' ~ img.filename) }}"/>
+    {% endif %}
     {{ form_start(form) }}
 
     {{ form_widget(form) }}

@@ -2,20 +2,24 @@
 <div class="row">
     <div class=" col offset-s3 col s6">
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+        {{ form_rest(form) }}
 
 
 
-
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+        <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
 
         {{ form_end(form) }}
+
 </div>
+    <a class="white-text" href="{{ path('fos_user_security_login') }}"><p>Back to login</p></a>
 </div>
-<h2 class="center">Or choose sponsors : </h2>
+
+<h2 class="white-text center">Or choose sponsors : </h2>
 <div class="row">
 <div class="col offset-s3 col s6">
     <input type="email" id="email1" name="email1" placeholder="First Email">
     <input type="email" id="email2" name="email2" placeholder="First Email"
-    ></div>
-</div>
+    >
+    <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
+</div></div>
 

@@ -2,6 +2,7 @@
 
 namespace PLATFORMBundle\Controller;
 
+use Doctrine\ORM\Mapping\Id;
 use PLATFORMBundle\Entity\FileImage;
 use PLATFORMBundle\Entity\MonActivite;
 use PLATFORMBundle\Entity\User;
@@ -50,6 +51,7 @@ class ProfilController extends Controller
 
     public function editAction(Request $request, User $user)
     {
+
         $deleteForm = $this->createDeleteForm($user);
 
         $editForm = $this->createForm('PLATFORMBundle\Form\UserType', $user);
@@ -72,24 +74,34 @@ class ProfilController extends Controller
         ));
     }
 
-    public function newImageAction(Request $request)
+    public function editImageAction(Request $request, $id)
     {
-        $image = new FileImage();
-        $form = $this->createForm(FileImageType::class, $image);
 
+        $em = $this->getDoctrine()->getManager();
+
+
+        $image = $em->getRepository('PLATFORMBundle:FileImage')->findOneById($id);
+
+
+
+        $form = $this->createForm('PLATFORMBundle\Form\FileImageType', $image);
         $form->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             $file = $image->getFilename();
             // Generate a unique name for the file before saving it
+            $path = $this->getParameter('brochures_directory')."/".$file;
+            if(file_exists($path))
+            {
+                unlink($path);
+            }
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
 
+
             // Move the file to the directory where brochures are stored
-            $file->move(
-                $this->getParameter('brochures_directory'),
-                $fileName
-            );
+            $file->move($this->getParameter('brochures_directory'), $fileName);
 
             // Update the 'brochure' property to store the PDF file name
             // instead of its contents
@@ -99,8 +111,8 @@ class ProfilController extends Controller
             $em = $this->getDoctrine()->getManager();
             $user = $this->getUser();
 
-$image->setFichier($user);
-            $em->persist($image);
+            $image->setFichier($user);
+
             $em->flush();
             // ... persist the $product variable or any other work
 
@@ -109,7 +121,7 @@ $image->setFichier($user);
 
         return $this->render('@PLATFORM/profil/MyProfilImage.html.twig', array(
             'form' => $form->createView(),
-            'img' => $image
+'img' => $image
         ));
     }
 
